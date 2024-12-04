@@ -10,7 +10,7 @@
 
         <!--Entrar-->
         <form class="width" action="/login/register" method="post">
-          <input type="hidden" name="_csrf" value=<%= csrfTOken %>>
+          <input type="hidden" name="_csrf" value="<%= csrfTOken %>">
             <div class="mb-3">
               <label for="" class="form-label">Endereço de Email</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
@@ -31,7 +31,7 @@
 
           <!--Criação-->
           <form class="width-100%" action="/login/create" method="post">
-            <input type="hidden" name="_csrf" value=<%= csrfTOken %>>
+            <input type="hidden" name="_csrf" value="<%= csrfTOken %>">
             <div class="mb-3">
               <label for="" class="form-label">Endereço de Email</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
