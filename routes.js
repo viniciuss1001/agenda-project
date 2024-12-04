@@ -2,9 +2,12 @@ const express = require("express");
 
 const route = express.Router()
 const homeController = require('./src/controllers/homeController')
+const loginController = require('./src/controllers/loginController')
 
 //home routes
-route.get('/', homeController.paginaInicial)
-route.post('/', homeController.trataPost)
+route.get('/', homeController.index)
+
+//login routes
+route.get('/login/index', loginController.index)
 
 module.exports = route
