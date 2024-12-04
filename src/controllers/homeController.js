@@ -1,10 +1,5 @@
-
-
 exports.paginaInicial= (req, res)=>{
-    res.render('index', {
-        titulo: 'Este será o título da página',
-        numeros: 1234
-    })
+    res.render('index')
 }
 
 exports.trataPost = (req, res) => {
