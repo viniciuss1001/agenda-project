@@ -5,13 +5,24 @@ const port = 3000
 const routes = require('./routes')
 const path = require('path')
 const mongoose = require('mongoose')
-mongoose.connect(process.env.CONNECTION_STRING,{
+
+mongoose.connect(process.env.CONNECTION_STRING, {
+
     useNewUrlParser: true, 
-    useUnifiedTopology: true,
-    useFindAndModify: true
-}).then(()=>{
+    
+    useUnifiedTopology: true 
+    
+    }, err => {
+    if(err) throw err;
+        console.log('Connected to MongoDB!!!')
+        //app.emit('all')
+    })
+    /*
+.then(()=>{
     app.emit('All')
 }).catch(e=>console.log(e))
+*/
+
 const session = require('express-session')
 const flash = require('connect-flash')
 const csrf = require('csurf')
@@ -56,7 +67,7 @@ app.use(csrf())
 app.use(checkCsrfTokenError)
 app.use(csrfMiddleware)
 
-app.on('All', ()=>{
+//app.on('all', ()=>{
     app.listen(port, () => console.log(`App listening on port ${port}!`))
 
-})
+//})
